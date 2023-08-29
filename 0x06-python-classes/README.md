@@ -32,17 +32,13 @@ mandatory
 Write a class Square that defines a square by: (based on 5-square.py)
 
 7. Singly linked list
-#advanced
 Write a class Node that defines a node of a singly linked list by:
 
 8. Print Square instance
-#advanced
 Write a class Square that defines a square by: (based on 6-square.py)8. Print Square instance
 
 9. Compare 2 squares
-#advanced
 Write a class Square that defines a square by: (based on 4-square.py)
 
 10. ByteCode -> Python #5
-#advanced
 Write the Python class MagicClass that does exactly the same as the following Python bytecode:
