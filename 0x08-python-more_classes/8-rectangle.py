@@ -2,8 +2,12 @@
 """class module"""
 class Rectangle:
     """class declaration"""
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """class init"""
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -51,7 +55,38 @@ class Rectangle:
 
         rect = []
         for i in range(self.height):
-            [rect.append('#') for j in range(self.width)]
+            [rect.append(str(self.print_symbol)) for j in range(self.width)]
             if i != self.height - 1:
                 rect.append("\n")
         return ("".join(rect))
+
+    def __repr__(self):
+        """Returns a string representation of the rectangle"""
+        rect = "Rectangle(" + str(self.width)
+        rect += ", " + str(self.height) + ")"
+        return (rect)
+
+    def __del__(self):
+        """Print the message after deleting any rectangle"""
+        type(self).number_of_instances -= 1
+        print("Bye rectangle...")
+
+    def bigger_or_equal(rect_1, rect_2):
+        """Returns the biggest rectangle based on the area.
+        Args:
+            rect_1 (Rectangle): first instance of rectangle.
+            rect_2 (Rectangle): second instance of rectangle.
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        if rect_1.area() == rect_2.area():
+            return (rect_1)
+
+        elif rect_1.area() > rect_2.area():
+            return (rect_1)
+
+        return (rect_2)

@@ -2,8 +2,12 @@
 """class module"""
 class Rectangle:
     """class declaration"""
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """class init"""
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -51,7 +55,18 @@ class Rectangle:
 
         rect = []
         for i in range(self.height):
-            [rect.append('#') for j in range(self.width)]
+            [rect.append(str(self.print_symbol)) for j in range(self.width)]
             if i != self.height - 1:
                 rect.append("\n")
         return ("".join(rect))
+
+    def __repr__(self):
+        """Returns a string representation of the rectangle"""
+        rect = "Rectangle(" + str(self.width)
+        rect += ", " + str(self.height) + ")"
+        return (rect)
+
+    def __del__(self):
+        """Print the message after deleting any rectangle"""
+        type(self).number_of_instances -= 1
+        print("Bye rectangle...")
