@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""class module"""
+
+"""Class module."""
+
 class Rectangle:
-    """class declaration"""
+    """Class declaration."""
     pass
