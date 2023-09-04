@@ -1,15 +1,21 @@
 #!/usr/bin/python3
+"""class module"""
 class Rectangle:
+    """class declaration"""
     def __init__(self, width=0, height=0):
+        """class init"""
         self.width = width
         self.height = height
 
     def width(self):
+        """method that return width"""
         return (self.__width)
     def height(self):
+        """method that return height"""
         return (self.__height)
 
     def width(self, value):
+        """method that changes the width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
 
@@ -19,6 +25,7 @@ class Rectangle:
         self.width = value
 
     def height(self, value):
+        """method that changes the height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
 
@@ -28,17 +35,17 @@ class Rectangle:
         self.height = value
 
     def area(self):
+        """method that return the area"""
         return (self.width * self.height)
 
     def perimeter(self):
+        """method that return the perimeter"""
         if self.width == 0 or self.height == 0:
             return (0)
         return ((2 * self.width) + (2 * self.height))
 
     def __str__(self):
-        if self.width == 0 or self.height == 0:
-            return
-
+        """method that returns a string"""
         for h in range(0, self.height):
             for w in range(0, self.width):
                 return ("#")
