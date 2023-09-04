@@ -19,34 +19,39 @@ class Rectangle:
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
 
-        if width < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
 
-        self.width = value
+        self.__width = value
 
     def height(self, value):
         """method that changes the height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
 
-        if height < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
 
-        self.height = value
+        self.__height = value
 
     def area(self):
         """method that return the area"""
-        return (self.width * self.height)
+        return (self.__width * self.__height)
 
     def perimeter(self):
         """method that return the perimeter"""
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return (0)
-        return ((2 * self.width) + (2 * self.height))
+        return ((2 * self.__width) + (2 * self.__height))
 
     def __str__(self):
         """method that returns a string"""
-        for h in range(0, self.height):
-            for w in range(0, self.width):
-                return ("#")
-            print("")
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+
+        rect = []
+        for h in range(self.__height):
+            [rect.append("#") for w in range(self.__width)]
+            if h != self.__height - 1:
+                rect.append("\n")
+        return ("".join(rect))
