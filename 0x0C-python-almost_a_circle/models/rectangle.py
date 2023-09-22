@@ -119,16 +119,11 @@ class Rectangle(Base):
     def display(self):
         """Prints in stdout the Rectangle instance with the character #"""
 
-        if self.width == 0 or height == 0:
-            print("")
-            return
-        [print("") for y in range(self.y)]
-        
-        for h in range(self.height):
-            [print(" ", end="") for x in range(self.x)]
-        [print("#", end="") for w in range(self.width)]
-        print("")
+        for h in range(0, self.height):
+            for w in range(0, self.width):
+                print("#", end="")
 
+            print("")
     def __str__(self):
         """Method that returns Rectangle by overriding the __str__ method"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
