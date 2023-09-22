@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Class Module."""
 
+
 from models.base import Base
 
 class Rectangle(Base):
@@ -128,3 +129,7 @@ class Rectangle(Base):
             
         [print("#", end="") for w in range(self.width)]
         print("")
+
+    def __str__(self):
+        """Method that returns Rectangle by overriding the __str__ method"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
