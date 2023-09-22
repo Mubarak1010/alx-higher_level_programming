@@ -4,6 +4,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """Class definition Rectangle
     inheriting from Base.
@@ -116,17 +117,15 @@ class Rectangle(Base):
         return (self.width * self.height)
 
     def display(self):
-        """Method that prints in stdout the Rectangle instance with the character #"""
+        """Prints in stdout the Rectangle instance with the character #"""
 
         if self.width == 0 or height == 0:
-            print ("")
+            print("")
             return
-
         [print("") for y in range(self.y)]
         
         for h in range(self.height):
             [print(" ", end="") for x in range(self.x)]
-            
         [print("#", end="") for w in range(self.width)]
         print("")
 
