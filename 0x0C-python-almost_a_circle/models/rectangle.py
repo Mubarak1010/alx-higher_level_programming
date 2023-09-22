@@ -127,3 +127,11 @@ class Rectangle(Base):
     def __str__(self):
         """Method that returns Rectangle by overriding the __str__ method"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args):
+        for i in range(0, len.args):
+            for arg in args:
+                if i == 0:
+                    self.id = arg
+                if i == 1:
+                    self
