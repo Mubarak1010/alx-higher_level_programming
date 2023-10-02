@@ -119,7 +119,8 @@ class Rectangle(Base):
         return (self.width * self.height)
 
     def display(self):
-        """Prints in stdout the Rectangle instance with the character #"""
+        """Prints in stdout the Rectangle instance
+        with the character #"""
 
         for h in range(0, self.height):
             for w in range(0, self.width):
@@ -127,5 +128,7 @@ class Rectangle(Base):
 
             print("")
     def __str__(self):
-        """Method that returns Rectangle by overriding the __str__ method"""
+        """Method that returns Rectangle by overriding
+        the __str__ method"""
+
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
