@@ -17,6 +17,7 @@ class Base:
         Args:
             id (int): number of instances
             """
+        
         if id is not None:
             self.id = id
 

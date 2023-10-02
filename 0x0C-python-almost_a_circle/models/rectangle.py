@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Class Module."""
-
-
 from models.base import Base
 
 
@@ -40,6 +38,7 @@ class Rectangle(Base):
         Args:
             value (int): the new value for width
             """
+        
         if not isinstance(value, int):
             raise TypeError("width must be an integer.")
 
@@ -61,6 +60,7 @@ class Rectangle(Base):
         Args:
             value (int): the new value for height
             """
+        
         if not isinstance(value, int):
             raise TypeError("height must be an integer.")
 
@@ -82,6 +82,7 @@ class Rectangle(Base):
         Args:
             value (int): the new value for x.
             """
+        
         if not isinstance(value, int):
             raise TypeError("x must be an integer.")
 
@@ -103,6 +104,7 @@ class Rectangle(Base):
         Args:
             value (int): the new value for y
             """
+        
         if not isinstance(value, int):
             raise TypeError("y must be an integer.")
 
